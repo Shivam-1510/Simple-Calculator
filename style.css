@@ -1,0 +1,78 @@
+/* Reset box-sizing and font-family */
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: "Gotham Rounded", sans-serif;
+}
+
+/* Body styles */
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #4b0082; /* Dark purple background */
+  color: #fff; /* White text color */
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Calculator grid styles */
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  gap: 10px; /* Add some space between grid items */
+}
+
+/* Button styles */
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background-color: #fff; /* White background */
+  color: #4b0082; /* Dark purple text color */
+  transition: background-color 0.3s ease;
+}
+
+.calculator-grid > button:hover {
+  background-color: #ddd; /* Lighter background on hover */
+}
+
+/* Span-two button styles */
+.span-two {
+  grid-column: span 2;
+}
+
+/* Output display styles */
+.output {
+  grid-column: 1 / -1;
+  background-color: #333; /* Dark gray background */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand,
+.output .current-operand {
+  color: #fff; /* White text color */
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  font-size: 2.5rem; /* Larger font size for current operand */
+}
